@@ -8,7 +8,15 @@ export enum Fields {
   EMAIL = 'email',
   PASSWORD = 'password',
   ADDRESS = 'address',
-  PHONENUMBER = 'phoneNumber'
+  PHONENUMBER = 'phoneNumber',
+  FILE = 'file'
+}
+
+export enum FormDataKeys {
+  FILE = 'file',
+  APIKEY = 'api_key',
+  SIGNATURE = 'signature',
+  TIMESTAMP = 'timestamp'
 }
 
 export enum Attributes {

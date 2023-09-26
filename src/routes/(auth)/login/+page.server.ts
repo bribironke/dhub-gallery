@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 const login: Action = async ({ cookies, request }) => {
   const data = await request.formData()
   const email = data.get(Fields.EMAIL)
-  const password = data.get("password")
+  const password = data.get(Fields.PASSWORD)
 
   if (
     typeof email !== 'string' ||
