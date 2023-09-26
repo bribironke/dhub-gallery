@@ -9,7 +9,7 @@
     <a href="/"><strong>Dhub</strong></a>
     <div class="flex items-center gap-4">
       <ul class="hidden md:flex items-center gap-4">
-        <li class="border-b border-opacity-40 w-full py-3 flex items-center justify-start"><a class="w-full h-full" href="/">Home</a></li>
+        <li class="w-full py-3 flex items-center justify-start"><a class="w-full h-full" href="/">Home</a></li>
         {#if !$page.data.user}
           <li><a href="/login">Login</a></li>
           <li><a href="/register">Register</a></li>
