@@ -6,7 +6,7 @@
 </script>
 
 <h1>Register</h1>
-<form action="?/register" method="post">
+<form action="?/register" method="post" use:enhance>
   <div>
     <label for="username">Username</label>
     <input type="text" name="username" id="username" required />

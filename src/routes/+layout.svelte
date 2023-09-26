@@ -1,5 +1,7 @@
 <script lang="ts">
   import '@picocss/pico'
+  import { applyAction, enhance } from '$app/forms';
+  import { invalidateAll } from '$app/navigation';
   import { page } from '$app/stores';
 </script>
 
@@ -20,7 +22,12 @@
       {:else}
         <li><a href="/admin">Admin</a></li>
         <li>
-          <form action="/logout" method="post">
+          <form action="/logout" method="post" use:enhance={() => {
+            return async ({ result }) => {
+              invalidateAll()
+              await applyAction(result)
+            }
+          }}>
             <button type="submit">Logout</button>
           </form>
         </li>
