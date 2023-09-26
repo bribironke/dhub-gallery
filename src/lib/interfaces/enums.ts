@@ -31,7 +31,7 @@ export enum Events {
   RESIZE = "resize",
 }
 
-export enum ClassNames {
+export enum DataTypes {
   TABACTIVE = "tab-active",
   COPYTEXT = "copy-text",
   HAMBURGER = "hamburger",

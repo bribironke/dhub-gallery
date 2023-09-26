@@ -5,28 +5,28 @@
 </script>
 
 <header class="shadow-custom w-full bg-white dark:bg-dmpaper">
-  <nav class="center flex flex-col items-center md:flex-row gap-2 justify-between">
+  <nav class="center flex items-center justify-between">
     <a href="/"><strong>Dhub</strong></a>
-    <ul class="flex flex-col md:flex-row items-center justify-center gap-1">
-      {#if !$page.data.user}
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
-      {:else}
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/upload">Upload Photo</a></li>
-        <li>
-          <form action="/logout" method="post">
-            <button type="submit">Logout</button>
-          </form>
-        </li>
-      {/if}
-      <li>
+    <div class="flex items-center gap-4">
+      <ul class="hidden md:flex items-center gap-4">
+        {#if !$page.data.user}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        {:else}
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/upload">Upload Photo</a></li>
+          <li>
+            <form action="/logout" method="post">
+              <button type="submit">Logout</button>
+            </form>
+          </li>
+        {/if}
+      </ul>
+      <div class="flex gap-4 items-center justify-between">
         <DarkModeBtn />
-      </li>
-      <li>
-        <Hamburger />
-      </li>
-    </ul>
+        <Hamburger classes={['flex', 'md:hidden']} />
+      </div>
+    </div>
   </nav>
   
 </header>

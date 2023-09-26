@@ -7,14 +7,7 @@
 
 <h1>Upload Picture</h1>
 <form action="?/upload" method="post">
-  <div>
-    <label for="email">Email</label>
-    <input type="email" name="email" placeholder="E.g. john.doe@gmail.com" id="email"/>
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password"/>
-  </div>
+  <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
   
   <button type="submit">Login</button>
 </form>

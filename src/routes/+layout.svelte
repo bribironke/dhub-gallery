@@ -9,7 +9,9 @@
 </svelte:head>
 
 
-<Header />
-<section class="center">
-  <slot />
-</section>
+<main class="text-font-color dark:text-white bg-light-bg dark:bg-dmbg h-screen">
+  <Header />
+  <section class="center">
+    <slot />
+  </section>
+</main>

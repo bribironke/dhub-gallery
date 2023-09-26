@@ -41,4 +41,8 @@ tr {
     -webkit-line-clamp: 1;
     overflow: hidden;
   }
+
+  .dcard {
+    @apply shadow-custom p-4 bg-white dark:bg-dmpaper rounded-lg
+  }
 }
