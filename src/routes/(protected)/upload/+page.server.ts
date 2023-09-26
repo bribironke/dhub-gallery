@@ -77,12 +77,14 @@ const upload: Action = async ({ request, locals }) => {
   }
 
   const { success, cdata, errorMsg } = await store(file)
+
+  console.log("secure url is", cdata?.secure_url)
   
   try {
     await db.image.create({
       data: {
         userId: locals.user.id,
-        url: cdata?.url as string,
+        url: cdata?.secure_url as string,
       }
     })
     locals.user.images = await db.image.findMany({
