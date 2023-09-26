@@ -9,12 +9,13 @@
     <a href="/"><strong>Dhub</strong></a>
     <div class="flex items-center gap-4">
       <ul class="hidden md:flex items-center gap-4">
+        <li class="border-b border-opacity-40 w-full py-3 flex items-center justify-start"><a class="w-full h-full" href="/">Home</a></li>
         {#if !$page.data.user}
           <li><a href="/login">Login</a></li>
           <li><a href="/register">Register</a></li>
         {:else}
           <li><a href="/profile">Profile</a></li>
-          <li><a href="/upload">Upload Photo</a></li>
+          <li><a href="/upload">Upload</a></li>
           <li>
             <form action="/logout" method="post">
               <button type="submit">Logout</button>

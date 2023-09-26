@@ -5,9 +5,18 @@
 
 </script>
 
-<h1>Upload Picture</h1>
-<form action="?/upload" method="post">
-  <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
-  
-  <button type="submit">Login</button>
-</form>
+<div class="w-full h-full flex justify-center items-center">
+  <form action="?/upload" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]">
+    <h1 class="text-2xl font-semibold">Upload Picture</h1>
+    <hr class="dark:opacity-40"/>
+    <div class="flex flex-col w-full gap-1">
+      <input type="file" class="file-input file-input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
+    </div>
+    <!-- {#if form?.invalid}
+      <p class="text-red-500 dark:text-white text-sm font-semibold">*Image is larger than 5MB. Reduce image size and re-upload</p>
+    {/if} -->
+
+
+    <button type="submit" class="bt bt-main outline-none">Upload</button>
+  </form>
+</div>

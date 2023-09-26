@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import Header from '$lib/components/Header.svelte';
+  import MobileNav from '$lib/components/MobileNav.svelte';
   import "../app.css"
 </script>
 
@@ -14,4 +15,5 @@
   <section class="center">
     <slot />
   </section>
+  <MobileNav />
 </main>
