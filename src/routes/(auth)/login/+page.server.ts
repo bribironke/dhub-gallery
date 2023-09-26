@@ -2,7 +2,7 @@ import { fail, redirect } from "@sveltejs/kit";
 import bcrypt from 'bcrypt'
 import type { Action, Actions, PageServerLoad } from './$types'
 
-import { db } from "$lib";
+import { Fields, db } from "$lib";
 
 export const load: PageServerLoad = async ({ locals }) => {
   if(locals.user) {
@@ -12,20 +12,20 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 const login: Action = async ({ cookies, request }) => {
   const data = await request.formData()
-  const username = data.get("username")
+  const email = data.get(Fields.EMAIL)
   const password = data.get("password")
 
   if (
-    typeof username !== 'string' ||
+    typeof email !== 'string' ||
     typeof password !== 'string' ||
-    !username ||
+    !email ||
     !password
   ) {
     return fail(400, { invalid: true })
   }
 
   const user = await db.user.findUnique({
-    where: { username }
+    where: { email }
   })
 
   if (!user) {

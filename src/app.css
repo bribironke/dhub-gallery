@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.center {
+  @apply w-full max-w-[1290px] mx-auto p-4
+}
+
+.-clickable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+tr, th, td {
+  @apply bg-white dark:!bg-dmpaper !text-dmpaper dark:!text-white
+}
+
+tr {
+  @apply dark:border-dmpaperx3
+}
+@layer utilities {
+
+  .two-lines {
+    white-space: initial;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  
+  .one-line {
+    white-space: initial;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}

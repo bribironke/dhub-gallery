@@ -1,12 +1,12 @@
-<script lang=ts>
+<script lang="ts">
   import type { ActionData } from './$types'
 
   export let form: ActionData
+
 </script>
 
-
-<h1>Login</h1>
-<form action="?/login" method="post">
+<h1>Upload Picture</h1>
+<form action="?/upload" method="post">
   <div>
     <label for="email">Email</label>
     <input type="email" name="email" placeholder="E.g. john.doe@gmail.com" id="email"/>
@@ -15,13 +15,6 @@
     <label for="password">Password</label>
     <input type="password" name="password" id="password"/>
   </div>
-  {#if form?.invalid}
-    <p>Email and password are required.</p>
-  {/if}
-
-  {#if form?.credentials}
-    <p>You have entered the wrong credentials</p>
-  {/if}
   
   <button type="submit">Login</button>
 </form>
