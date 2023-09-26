@@ -1,5 +1,6 @@
 <script lang="ts">
   import '@picocss/pico'
+  import { page } from '$app/stores';
 </script>
 
 <svelte:head>
@@ -7,5 +8,24 @@
 </svelte:head>
 
 <div class="container">
+  <nav>
+    <ul>
+      <li><a href="/"><strong>Dhub</strong></a></li>
+    </ul>
+    <ul>
+      
+      {#if !$page.data.user}
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+      {:else}
+        <li><a href="/admin">Admin</a></li>
+        <li>
+          <form action="/logout" method="post">
+            <button type="submit">Logout</button>
+          </form>
+        </li>
+      {/if}
+    </ul>
+  </nav>
   <slot />
 </div>

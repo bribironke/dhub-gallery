@@ -43,6 +43,7 @@
 		"@supabase/auth-ui-shared": "^0.1.7",
 		"@supabase/auth-ui-svelte": "^0.2.6",
 		"@supabase/supabase-js": "^2.36.0",
-		"bcrypt": "^5.1.1"
+		"bcrypt": "^5.1.1",
+		"prisma": "^5.3.1"
 	}
 }
