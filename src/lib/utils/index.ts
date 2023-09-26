@@ -1,3 +1,4 @@
+import type { iCData } from "$lib/interfaces";
 import { Attributes, DataTypes, Events } from "$lib/interfaces/enums";
 
 export const btnClasses = [
@@ -48,4 +49,11 @@ export const addMobileNavListener = (mobileNavRef: HTMLElement) => {
 export const removeMobileNavListener = (mobileNavRef: HTMLElement) => {
   console.log("removing mobile nav listener")
   removeEventListener(Events.CLICK, (evt) => clickHandler(evt, mobileNavRef));
+}
+
+
+export const imageBlobUrl = async (imageUrl: string): Promise<string> => {
+  const response = await fetch(imageUrl);
+  const blob = await response.blob();
+  return URL.createObjectURL(blob);
 }

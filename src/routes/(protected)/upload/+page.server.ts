@@ -4,7 +4,7 @@ import type { Action, Actions, PageServerLoad } from "./$types";
 import { CLOUDINARY_API_SECRET, CLOUDINARY_API_KEY, CLOUDINARY_CLOUD_NAME } from "$env/static/private";
 
 import { v2 as cloudinary } from "cloudinary"
-import { Fields, FormDataKeys } from "$lib";
+import { Fields, FormDataKeys, type iCData, db } from "$lib";
 import axios, { type AxiosProgressEvent } from 'axios'
 
 
@@ -56,14 +56,10 @@ const store = async (file: File) => {
         }
       }
     )
-    return { success: true, cdata: response.data  }
+    return { success: true, cdata: response.data as iCData }
   } catch (error: any) {
     return { success: false, errorMsg: error.message }
   }
-}
-
-const imgToCanvas = () => {
-  
 }
 
 const upload: Action = async ({ request, locals }) => {
@@ -81,6 +77,20 @@ const upload: Action = async ({ request, locals }) => {
   }
 
   const { success, cdata, errorMsg } = await store(file)
+  
+  try {
+    await db.image.create({
+      data: {
+        userId: locals.user.id,
+        url: cdata?.url as string,
+      }
+    })
+    locals.user.images = await db.image.findMany({
+      where: { userId: locals.user.id }
+    })
+  } catch (error: any) {
+    return fail(400, { uploadError: true, errorMsg: error.message })
+  }
 
   if (!success) {
     return fail(401, { uploadError: true, errorMsg  })
