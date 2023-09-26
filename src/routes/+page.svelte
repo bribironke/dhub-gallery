@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Gallery | Dhub</title>
+  <title>Dhub</title>
 </svelte:head>
 
 <div class="row flex flex-center">
