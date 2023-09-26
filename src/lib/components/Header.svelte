@@ -6,7 +6,7 @@
 
 <header class="shadow-custom w-full bg-white dark:bg-dmpaper">
   <nav class="center flex items-center justify-between">
-    <a href="/"><strong>Dhub</strong></a>
+    <a href="/" aria-label="logo" class="font-semibold">Dhub Gallery</a>
     <div class="flex items-center gap-4">
       <ul class="hidden md:flex items-center gap-4">
         <li class="w-full py-3 flex items-center justify-start"><a class="w-full h-full" href="/">Home</a></li>
