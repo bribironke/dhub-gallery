@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>Gallery | Dhub</title>
+  <title>Dhub</title>
 </svelte:head>
 
 

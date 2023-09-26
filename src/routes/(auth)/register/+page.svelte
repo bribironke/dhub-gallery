@@ -3,7 +3,9 @@
 
   export let form: ActionData
 </script>
-
+<svelte:head>
+  <title>Register | Dhub</title>
+</svelte:head>
 <div class="w-full h-full flex justify-center items-center">
 
   <form action="?/register" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]">

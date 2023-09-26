@@ -4,7 +4,9 @@
   export let form: ActionData
 
 </script>
-
+<svelte:head>
+  <title>Upload | Dhub</title>
+</svelte:head>
 <div class="w-full h-full flex justify-center items-center">
   <form action="?/upload" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]">
     <h1 class="text-2xl font-semibold">Upload Picture</h1>

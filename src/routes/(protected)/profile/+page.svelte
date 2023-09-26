@@ -4,7 +4,10 @@
 
 </script>
 
-<h1>Admin</h1>
+<svelte:head>
+  <title>Profile | Dhub</title>
+</svelte:head>
+<h1>Profile</h1>
 
 {#if $page.data.user}
   <p>Welcome { $page.data.user.name }</p>
