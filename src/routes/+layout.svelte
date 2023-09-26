@@ -1,12 +1,11 @@
 <script lang="ts">
-  
+  import '@picocss/pico'
 </script>
 
 <svelte:head>
   <title>Gallery | Dhub</title>
 </svelte:head>
 
-<div class="row flex flex-center">
-  <h1>Home</h1>
-  <p>Welcome 🚀</p>
+<div class="container">
+  <slot />
 </div>
