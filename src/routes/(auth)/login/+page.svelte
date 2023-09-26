@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="w-full h-full flex justify-center items-center">
-  <form action="?/login" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]">
+  <form action="?/login" method="post" class="mx-auto flex flex-col gap-4 dcard w-full max-w-[480px] md:w-[600px]">
     <h1 class="text-2xl font-semibold">Login</h1>
     <hr class="dark:opacity-40"/>
     <div class="flex flex-col w-full gap-1">
@@ -28,5 +28,10 @@
     {/if}
 
     <button type="submit" class="bt bt-main outline-none">Login</button>
+    <hr class="dark:opacity-40"/>
+    <div>
+      <span>Don't have an account yet?</span>
+      <a href="/register" class="underline">Register</a>
+    </div>
   </form>
 </div>

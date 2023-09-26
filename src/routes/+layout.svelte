@@ -10,7 +10,7 @@
 </svelte:head>
 
 
-<main class="text-font-color dark:text-white bg-light-bg dark:bg-dmbg h-screen">
+<main class="text-font-color dark:text-white bg-light-bg dark:bg-dmbg h-full md:h-screen">
   <Header />
   <section class="center">
     <slot />
