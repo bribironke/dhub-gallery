@@ -1,7 +1,5 @@
 # Dhub Image Gallery
 
-## Image Upload and Contact Info Submission Web Application
-
 This project is a simple web application that allows users to upload images and submit their contact information. The application provides a user-friendly interface and follows best practices for web development.
 
 ## Demo
@@ -49,36 +47,15 @@ A live demo of the application can be found [here](https://dhub-gallery.netlify.
    - The application has a responsive design that works on both desktop and mobile devices.
    - Client-side validation is used for contact information fields to provide immediate feedback to users.
 
-## Evaluation Criteria
-
-The application will be evaluated based on the following criteria:
-
-1. **Functionality:** Does the application meet all the specified requirements?
-
-2. **User Experience:** Is the user interface intuitive and responsive? Are there any usability issues?
-
-3. **Security:** Are security best practices followed to protect user data and prevent unauthorized access?
-
-4. **Code Quality:** Is the code well-structured, maintainable, and documented?
-
-5. **Error Handling:** Does the application handle errors gracefully and provide informative error messages to users?
-
-6. **Testing:** Is the application adequately tested, including unit tests and integration tests?
 
 ## Setup Instructions
 
 1. Clone the repository to your local machine.
 2. Set up the necessary environment variables (e.g., database credentials, Cloudinary API keys).
-3. Install dependencies using `npm install`.
-4. Start the application using `npm run dev`.
+3. Install dependencies using `pnpm install`.
+4. Start the application using `pnpm run dev`.
 
 ## Running Tests
 
-- Integration Tests: `npm run test:integration`
-- Unit Tests: `npm run test:unit`
-
-## Submission
-
-Please find the code repository [here](https://github.com/bribironke/dhub-gallery) and the live demo [here](https://dhub-gallery.netlify.app/). Include any additional setup instructions in your repository's README file.
-
-Feel free to reach out if you have any questions or need further assistance!
+- Integration Tests: `pnpm run test:integration`
+- Unit Tests: `pnpm run test:unit`
