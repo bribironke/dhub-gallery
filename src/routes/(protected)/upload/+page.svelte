@@ -36,14 +36,17 @@
 
     <button type="submit" class="bt bt-main outline-none">Upload</button>
   </form>
-  <div class="overflow-auto grid grid-cols-3 gap-2 bg-white dark:bg-dmpaper w-full">
-    {#if $page.data.user}
-      {#each $page.data.user.images as image}
-      {#await imageUrlToBlob(image.url) then value}
-        <div class="w-20 h-20 bg-no-repeat rounded-full bg-cover shadow-custom bg-center" style="{`background-image: url(${value})`}"></div>
-        <!-- <img src="{value}" alt=""/> -->
-      {/await}
-      {/each}
-    {/if}
-  </div>
+  <section class="bg-white dark:bg-dmpaper shadow-custom rounded-lg p-4 flex flex-col gap-2">
+    <h2 class="font-semibold">Your uploaded pictures</h2>
+    <div class="overflow-auto grid grid-cols-3 gap-2 w-full">
+      {#if $page.data.user}
+        {#each $page.data.user.images as image}
+        {#await imageUrlToBlob(image.url) then value}
+          <div class="w-20 h-20 bg-no-repeat rounded-full bg-cover shadow-custom bg-center" style="{`background-image: url(${value})`}"></div>
+          <!-- <img src="{value}" alt=""/> -->
+        {/await}
+        {/each}
+      {/if}
+    </div>
+  </section>
 </div>
