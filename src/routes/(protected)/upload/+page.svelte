@@ -18,13 +18,17 @@
   <form action="?/upload" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]" enctype="multipart/form-data">
     <h1 class="text-2xl font-semibold">Upload Picture</h1>
     <hr class="dark:opacity-40"/>
-    {#if $page.data.user}
-      {#each $page.data.user.images as image}
-      {#await imageUrlToBlob(image.url) then value}
-        <img src="{value}" alt=""/>
-      {/await}
-      {/each}
-    {/if}
+
+    <div class="one-line overflow-auto">
+      {#if $page.data.user}
+        {#each $page.data.user.images as image}
+        {#await imageUrlToBlob(image.url) then value}
+          <div class="w-20 h-20 bg-no-repeat rounded-full bg-cover shadow-custom bg-center inline-block" style="{`background-image: url(${value})`}"></div>
+          <!-- <img src="{value}" alt=""/> -->
+        {/await}
+        {/each}
+      {/if}
+    </div>
     <div class="flex flex-col w-full gap-1">
       <input type="file" name="file" class="file-input file-input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" accept=".jpg, .png, .gif" />
     </div>
