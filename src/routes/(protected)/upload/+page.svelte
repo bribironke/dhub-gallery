@@ -16,7 +16,7 @@
 
 <div class="w-full h-full flex flex-col gap-4 justify-center items-center">
   <form action="?/upload" method="post" class="mx-auto flex flex-col gap-4 dcard w-[300px] md:w-[480px]" enctype="multipart/form-data">
-    <h1 class="text-2xl font-semibold">Upload Picture</h1>
+    <h1 class="text-2xl font-semibold" aria-label="upload callout">Upload Picture</h1>
     <hr class="dark:opacity-40"/>
 
     <div class="flex flex-col w-full gap-1">

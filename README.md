@@ -51,9 +51,16 @@ A live demo of the application can be found [here](https://dhub-gallery.netlify.
 ## Setup Instructions
 
 1. Clone the repository to your local machine.
-2. Set up the necessary environment variables (e.g., database credentials, Cloudinary API keys).
-3. Install dependencies using `pnpm install`.
-4. Start the application using `pnpm run dev`.
+2. Create supabase and cloudinary accounts.
+3. Set up the necessary environment variables (e.g., database credentials, Cloudinary API keys).
+   - create a .env file 
+   - update the .env file with the following variables
+     DATABASE_URL="postgresql://postgres:[YOUR SUPABASE PASSWORD]@[YOUR SUPABASE HOST]:5432/postgres"
+     CLOUDINARY_CLOUD_NAME="YOUR CLOUDINARY CLOUD NAME"
+     CLOUDINARY_API_KEY="YOUR CLOUDINARY API KEY"
+     CLOUDINARY_API_SECRET="YOUR CLOUDINARY API SECRET"
+4. Install dependencies using `pnpm install`.
+5. Start the application using `pnpm run dev`.
 
 ## Running Tests
 

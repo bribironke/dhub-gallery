@@ -13,11 +13,11 @@
     <hr class="dark:opacity-40"/>
     <div class="flex flex-col w-full gap-1">
       <label for="email">Email</label>
-      <input type="email" name="email" placeholder="E.g. john.doe@gmail.com" id="email" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
+      <input type="email" name="email" placeholder="E.g. john.doe@gmail.com" aria-label="emfield" id="email" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
     </div>
     <div class="flex flex-col w-full gap-1">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
+      <input type="password" name="password" id="password" aria-label="pwfield" placeholder="E.g ¬`5d2'@" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
     </div>
     {#if form?.invalid}
       <p class="text-red-500 dark:text-white text-sm font-semibold">*Email and password are required.</p>
@@ -27,7 +27,7 @@
       <p class="text-red-500 dark:text-white text-sm font-semibold">*You have entered the wrong credentials</p>
     {/if}
 
-    <button type="submit" class="bt bt-main outline-none">Login</button>
+    <button type="submit" class="bt bt-main outline-none" aria-label="submitbtn">Login</button>
     <hr class="dark:opacity-40"/>
     <div>
       <span>Don't have an account yet?</span>
