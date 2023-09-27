@@ -6,11 +6,11 @@ import { Fields, db } from "$lib";
 
 export const load: PageServerLoad = async ({ locals }) => {
   if(locals.user) {
-    throw redirect(302, '/')
+    throw redirect(302, "/")
   }
 };
 
-const login: Action = async ({ cookies, request }) => {
+const login: Action = async ({ cookies, request, locals }) => {
   const data = await request.formData()
   const email = data.get(Fields.EMAIL)
   const password = data.get(Fields.PASSWORD)
@@ -53,7 +53,9 @@ const login: Action = async ({ cookies, request }) => {
     maxAge: 60 * 60 * 24 * 30
   })
 
-  throw redirect(302, '/')
+  console.log("from login, locals.user.redirectUrl", locals)
+
+  throw redirect(302, "/")
 }
 
 export const actions: Actions = {

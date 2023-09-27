@@ -1,5 +1,5 @@
 import type { Handle } from "@sveltejs/kit"; 
-import { db } from "$lib";
+import { db, getRedirectUrl } from "$lib";
 
 export const handle: Handle = async ({ event, resolve }) => {
   const session = event.cookies.get("session")

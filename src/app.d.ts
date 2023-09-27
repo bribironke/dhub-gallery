@@ -14,7 +14,7 @@ declare global {
 				email: string;
 				address: string;
 				phoneNumber: string;
-				images: iImage[]
+				images: iImage[];
 			}
 		}
 		// interface PageData {}

@@ -57,3 +57,8 @@ export const imageBlobUrl = async (imageUrl: string): Promise<string> => {
   const blob = await response.blob();
   return URL.createObjectURL(blob);
 }
+
+export const getRedirectUrl = (url: URL) => {
+  const page = url.searchParams.get("page")
+  return page ? `/${page}` : "/"
+}
