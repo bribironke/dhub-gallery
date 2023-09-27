@@ -17,7 +17,7 @@
     </div>
     <div class="flex flex-col w-full gap-1">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" aria-label="pwfield" placeholder="E.g ¬`5d2'@" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
+      <input type="password" name="password" aria-label="pwfield" id="password" class="input input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" />
     </div>
     {#if form?.invalid}
       <p class="text-red-500 dark:text-white text-sm font-semibold">*Email and password are required.</p>
