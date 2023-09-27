@@ -24,9 +24,11 @@
         {/if}
       </ul>
       <div class="flex gap-4 items-center justify-between">
+        {#if $page.data.user}
         <div>
           Welcome, { $page.data.user.name }
         </div>
+        {/if}
         <DarkModeBtn />
         <Hamburger classes={['flex', 'md:hidden']} />
       </div>

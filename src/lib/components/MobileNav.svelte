@@ -17,10 +17,13 @@
 	aria-label="mobile-navigation"
 	class="w-[290px] fixed top-0 right-0 h-screen z-10 bg-white dark:bg-dmpaper translate-x-[150%] transition-transform duration-200 p-4">
 	<div class="flex items-center justify-between py-4">
+		
+		{#if $page.data.user}
 		<div>
 			<small>Welcome</small>
 			<p>{ $page.data.user.name }</p>
 		</div>
+		{/if}
 		<div class="flex items-center gap-2">
 			<DarkModeBtn />
 			<CancelOrCloseBtn />
