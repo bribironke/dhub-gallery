@@ -36,12 +36,7 @@ const profile: Action = async ({ request, locals }) => {
     const status: iStatus = { message: "Phone Number field cannot be empty", type: "error" } 
     return fail(400, { invalid: true, status })
   }
-
-  // const user = await db.user.findUnique({
-  //   where: { email: locals.user.email } 
-  // })
-  
-  // console.log("locals.user from profile action", locals.user)
+ 
 
   const update = { username, email, address, phoneNumber }
 

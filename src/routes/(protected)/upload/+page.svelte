@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import Toast from '$lib/components/Toast.svelte';
   import type { ActionData } from './$types'
 
   export let form: ActionData
@@ -23,15 +24,11 @@
       <input type="file" name="file" class="file-input file-input-bordered w-full bg-transparent border-font-color/40 dark:border-white/40" accept=".jpg, .png, .gif" />
     </div>
     {#if form?.maxSizeExceeded}
-      <p class="text-red-500 dark:text-white text-sm font-semibold">*Image is larger than 5MB. Reduce image size and re-upload</p>
+      <p class="text-red-500 dark:text-white text-sm font-semibold">*Image is larger than 5MB</p>
     {/if}
 
     {#if form?.invalid}
-      <p class="text-red-500 dark:text-white text-sm font-semibold">*Wrong or No file uploaded. Re-upload correct image files</p>
-    {/if}
-    
-    {#if form?.uploadError}
-      <p class="text-red-500 dark:text-white text-sm font-semibold">*{form?.errorMsg}</p>
+      <p class="text-red-500 dark:text-white text-sm font-semibold">*Wrong or No file uploaded.</p>
     {/if}
 
     <button type="submit" class="bt bt-main outline-none">Upload</button>
@@ -50,3 +47,6 @@
     </div>
   </section>
 </div>
+{#if form?.status}
+   <Toast status={form.status} />
+{/if}

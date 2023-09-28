@@ -4,7 +4,7 @@ import type { Action, Actions, PageServerLoad } from "./$types";
 import { CLOUDINARY_API_SECRET, CLOUDINARY_API_KEY, CLOUDINARY_CLOUD_NAME } from "$env/static/private";
 
 import { v2 as cloudinary } from "cloudinary"
-import { Fields, FormDataKeys, type iCData, db } from "$lib";
+import { Fields, FormDataKeys, type iCData, db, type iStatus } from "$lib";
 import axios, { type AxiosProgressEvent } from 'axios'
 
 
@@ -68,16 +68,22 @@ const upload: Action = async ({ request, locals }) => {
   const file = data.get(Fields.FILE) as File
 
   if (file.name === "undefined") {
-    return fail(401, { invalid: true })
+    const status: iStatus = { message: "Wrong or No file uploaded. Re-upload correct image files", type: "error" } 
+    return fail(401, { invalid: true, status })
   }
   console.log("file", file)
   const size = fileSize(file)
   if (size > 5) {
-    return fail(400, { maxSizeExceeded: true })
+    const status: iStatus = { message: "File size exceeds 5MB. Resize and re-upload", type: "error" } 
+    return fail(400, { maxSizeExceeded: true, status })
   }
 
   const { success, cdata, errorMsg } = await store(file)
 
+  if (!success) {
+    const status: iStatus = { message: errorMsg, type: "error" } 
+    return fail(401, { uploadError: true, status  })
+  }
   console.log("secure url is", cdata?.secure_url)
   
   try {
@@ -90,15 +96,12 @@ const upload: Action = async ({ request, locals }) => {
     locals.user.images = await db.image.findMany({
       where: { userId: locals.user.id }
     })
+    const status: iStatus = { message: "Successfully uploaded picture 🚀", type: "success" } 
+    return { status }
   } catch (error: any) {
-    return fail(400, { uploadError: true, errorMsg: error.message })
+    const status: iStatus = { message:`Couldn't upload image because ${error.message}`, type: "error" } 
+    return fail(400, { uploadError: true, status })
   }
-
-  if (!success) {
-    return fail(401, { uploadError: true, errorMsg  })
-  }
-
-  throw redirect(302, '/upload')
 }
 
 export const actions: Actions = {
