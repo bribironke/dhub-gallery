@@ -25,7 +25,7 @@
       </ul>
       <div class="flex gap-4 items-center justify-between">
         {#if $page.data.user}
-        <div>
+        <div class="hidden md:block">
           Welcome, { $page.data.user.name }
         </div>
         {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { btnClasses } from "$lib";
 
-  const className = "fill-dmpaperx2 dark:fill-white cursor-pointer h-9 w-9 flex items-center justify-center relative" + btnClasses.join(" ")
+  const className = "fill-dmpaperx2 dark:fill-white cursor-pointer h-[40px] w-[40px] flex items-center justify-center relative" + btnClasses.join(" ")
 </script>
 <button on:click class={className}>
   <div class="-clickable" data-type="close-mobile-nav"></div>

@@ -71,10 +71,7 @@ export const lsGet = (key: string) => browser && JSON.parse(localStorage.getItem
 
 export const lsSet = (key: string, data: any) => browser && localStorage.setItem(key, JSON.stringify(data))
 
-export const initial: iStatus = {
-  type: "info",
-  message: "Welcome to dhub gallery"
-}
+export const initial: iStatus = { message: "Successfully signed in", type: "success" }
 
 export const icon = (status: TStatus) => {
   switch (status) {

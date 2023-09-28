@@ -1,9 +1,9 @@
 <script lang="ts">
   import Header from '$lib/components/Header.svelte';
   import MobileNav from '$lib/components/MobileNav.svelte';
-  import Toast from '$lib/components/Toast.svelte'; 
-  import { page } from '$app/stores';
-  import "../app.css" 
+  import Toast from '$lib/components/Toast.svelte';
+  import "../app.css"
+
 </script>
 
 <svelte:head>

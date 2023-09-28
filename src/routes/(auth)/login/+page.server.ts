@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt'
 import type { Action, Actions, PageServerLoad } from './$types'
 
 import { Fields, db, type iStatus, lsSet, Events } from "$lib";
+// import { statusStore } from "$lib/stores";
 
 export const load: PageServerLoad = async ({ locals }) => {
   if(locals.user) {
@@ -17,13 +18,15 @@ const login: Action = async ({ cookies, request, locals }) => {
 
   if (typeof email !== 'string' || email.length < 1) {
     const status: iStatus = { message: "Email field cannot be empty", type: "error" }
-    locals.status = status
-    return fail(400, { invalid: true })
+    // locals.status = status
+    // statusStore.update(_ => status)
+    return fail(400, { invalid: true, status })
   }
   if (typeof password !== 'string' || password.length < 1) {
     const status: iStatus = { message: "Password field cannot be empty", type: "error" }
-    locals.status = status
-    return fail(400, { invalid: true })
+    // locals.status = status
+    // statusStore.update(_ => status)
+    return fail(400, { invalid: true, status })
   }
 
   const user = await db.user.findUnique({
@@ -32,16 +35,18 @@ const login: Action = async ({ cookies, request, locals }) => {
 
   if (!user) {
     const status: iStatus = { message: "User doesn't exist", type: "error" }
-    locals.status = status
-    return fail(400, { credentials: true })
+    // locals.status = status
+    // statusStore.update(_ => status)
+    return fail(400, { credentials: true, status })
   }
 
   const userPassword = await bcrypt.compare(password, user.passwordHash)
 
   if (!userPassword) {
     const status: iStatus = { message: "Password mismatch, enter correct password", type: "error" }
-    locals.status = status
-    return fail(400, { credentials: true })
+    // locals.status = status
+    // statusStore.update(_ => status)
+    return fail(400, { credentials: true, status })
   }
 
   const authenticatedUser = await db.user.update({
@@ -50,6 +55,10 @@ const login: Action = async ({ cookies, request, locals }) => {
       userAuthToken: crypto.randomUUID()
     }
   })
+
+  // const status: iStatus = { message: "Successfully signed in", type: "success" }
+  // locals.status = status
+  // statusStore.update(_ => status)
 
   cookies.set('session', authenticatedUser.userAuthToken, {
     path: '/',

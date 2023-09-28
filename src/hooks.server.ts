@@ -1,8 +1,8 @@
 import type { Handle } from "@sveltejs/kit"; 
-import { db, initial } from "$lib";
+import { db, initial, type iStatus } from "$lib";
+import { statusStore } from "$lib/stores";
 
 export const handle: Handle = async ({ event, resolve }) => {
-  event.locals.status = initial
   const session = event.cookies.get("session")
 
   if (!session) {
@@ -23,11 +23,9 @@ export const handle: Handle = async ({ event, resolve }) => {
       email: user.email,
       images: user.images,
       phoneNumber: user.phoneNumber
-    },
-    event.locals.status = {
-      type: "success",
-      message: "Successfully signed in"
     }
+    // const status: iStatus = { message: "Successfully signed in", type: "success" }
+    // statusStore.update(_ => status)
   }
 
   return await resolve(event)
