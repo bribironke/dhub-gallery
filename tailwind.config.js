@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
+	],
 	darkMode: "class",
 	theme: {
 		extend: {
@@ -17,12 +19,14 @@ module.exports = {
         "rating-gray": "#c7c7cd",
         "font-color": "#282828",
         "border-color": "#a3a3a6",
+				"dark-blue": "#285192",
+				"light-blue": "#e3ebf7",
         "dark-green": "#137333",
         "light-green": "#e6f4ea",
         "dark-red": "#a50e0e",
         "light-red": "#fce8e6",
-        "dark-orange": "#f68b1e",
-        "light-orange": "#fde7db",
+        "dark-orange": "#a37313",
+        "light-orange": "#fbf2de",
         "main": "#EE1E87",
         "secondary": "#492893"
 			},
@@ -47,6 +51,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require("daisyui")
+		require('daisyui')
 	],
 }

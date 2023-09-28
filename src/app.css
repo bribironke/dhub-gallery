@@ -79,3 +79,7 @@ tr {
     color: white !important;
   }
 }
+
+.show {
+  transform: translate(-50%, 0%);
+}

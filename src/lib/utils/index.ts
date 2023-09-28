@@ -1,6 +1,10 @@
-import type { iCData } from "$lib/interfaces";
+import { browser } from "$app/environment";
+import type { TStatus, iCData, iStatus } from "$lib/interfaces";
 import { Attributes, DataTypes, Events } from "$lib/interfaces/enums";
-
+import Info__SvelteComponent_ from "$lib/components/icons/Info.svelte";
+import Alert__SvelteComponent_ from "$lib/components/icons/Alert.svelte";
+import Error__SvelteComponent_ from "$lib/components/icons/Error.svelte";
+import Success__SvelteComponent_ from "$lib/components/icons/Success.svelte";
 export const btnClasses = [
   "flex",
   "items-center",
@@ -61,4 +65,33 @@ export const imageBlobUrl = async (imageUrl: string): Promise<string> => {
 export const getRedirectUrl = (url: URL) => {
   const page = url.searchParams.get("page")
   return page ? `/${page}` : "/"
+}
+
+export const lsGet = (key: string) => browser && JSON.parse(localStorage.getItem(key) as string)
+
+export const lsSet = (key: string, data: any) => browser && localStorage.setItem(key, JSON.stringify(data))
+
+export const initial: iStatus = {
+  type: "info",
+  message: "Welcome to dhub gallery"
+}
+
+export const icon = (status: TStatus) => {
+  switch (status) {
+    case "alert": return Alert__SvelteComponent_;
+    case "info": return Info__SvelteComponent_;
+    case "error": return Error__SvelteComponent_;
+    case "success": return Success__SvelteComponent_;
+    default: return Info__SvelteComponent_
+  }
+}
+
+export const color = (status: TStatus) => {
+  switch (status) {
+    case "alert": return "bg-light-orange text-dark-orange";
+    case "info": return "bg-light-blue text-dark-blue";
+    case "error": return "bg-light-red text-dark-red";
+    case "success": return "bg-light-green text-dark-green";
+    default: return "bg-light-blue text-dark-blue"
+  }
 }

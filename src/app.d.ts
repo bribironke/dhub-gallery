@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 
-import type { iImage } from "$lib/interfaces";
+import type { iImage, iStatus } from "$lib/interfaces";
 
 // for information about these interfaces
 declare global {
@@ -15,7 +15,8 @@ declare global {
 				address: string;
 				phoneNumber: string;
 				images: iImage[];
-			}
+			},
+			status: iStatus,
 		}
 		// interface PageData {}
 		// interface Platform {}

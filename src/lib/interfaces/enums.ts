@@ -37,6 +37,8 @@ export enum Events {
   CLICK = "click",
   SCROLL = "scroll",
   RESIZE = "resize",
+  FORMSUBMISSION = "form submission",
+  PAGENAVIGATION = "page navigation"
 }
 
 export enum DataTypes {
@@ -44,4 +46,8 @@ export enum DataTypes {
   COPYTEXT = "copy-text",
   HAMBURGER = "hamburger",
   CLOSEMOBILENAV = "close-mobile-nav",
+}
+
+export enum Others {
+  STATUS = "status"
 }

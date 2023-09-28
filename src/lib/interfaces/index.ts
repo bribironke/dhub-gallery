@@ -29,3 +29,14 @@ export interface iCData {
   original_filename: string;
   api_key: string;
 }
+
+export type TStatus = "info" | "alert" | "success" | "error"
+
+export interface iStatus {
+  type: TStatus,
+  message: string
+}
+
+export type TColor = "blue" | "green" | "orange" | "red"
+
+export type TEventType = "form submission" | "page navigation"
