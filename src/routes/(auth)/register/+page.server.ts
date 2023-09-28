@@ -19,7 +19,7 @@ const register: Action = async ({ request }) => {
   const phoneNumber = data.get(Fields.PHONENUMBER)
 
   if (typeof username !== 'string' || username.length < 1) {
-    const status: iStatus = { message: "User field cannot be empty", type: "error" } 
+    const status: iStatus = { message: "Username field cannot be empty", type: "error" } 
     return fail(400, { invalid: true, status })
   }
   if (typeof password !== 'string' || password.length < 1) {
