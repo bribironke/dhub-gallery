@@ -25,8 +25,9 @@
       </ul>
       <div class="flex gap-4 items-center justify-between">
         {#if $page.data.user}
-        <div class="hidden md:block">
-          Welcome, { $page.data.user.name }
+        <div class="hidden md:flex items-baseline gap-1">
+          <small>Welcome,</small>
+          <p>{ $page.data.user.name }</p>
         </div>
         {/if}
         <DarkModeBtn />
