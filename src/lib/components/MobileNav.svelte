@@ -1,9 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
 	import CancelOrCloseBtn from "./buttons/CancelOrCloseBtn.svelte";
-  import { addMobileNavListener, removeMobileNavListener } from "$lib";
+  import { addMobileNavListener, removeMobileNavListener, toggleMobile } from "$lib";
 	import { page } from "$app/stores";
   import DarkModeBtn from "./buttons/DarkModeBtn.svelte";
+	import { navigating } from "$app/stores";
 
 	let mobileNavRef: HTMLElement
 	
@@ -11,6 +12,8 @@
 		addMobileNavListener(mobileNavRef)
 		return removeMobileNavListener(mobileNavRef)
 	});
+
+	$: $navigating && toggleMobile(mobileNavRef)
 </script>
 <div
 	bind:this={mobileNavRef}

@@ -26,22 +26,15 @@ export const btnClasses = [
   "shadow-custom",
   "cursor-pointer"
 ]
+
+export const toggleMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.toggle('translate-x-[150%]');
 const clickHandler = (evt: Event, mobileNavRef: HTMLElement) => {
   const target = evt.target as HTMLElement;
   const type = target.getAttribute(Attributes.DATATYPE);
 
   switch (type) {
-    case DataTypes.CLOSEMOBILENAV:
-      console.log('closing mobile nav');
-      mobileNavRef && mobileNavRef.classList.toggle('translate-x-[150%]');
-      break;
-    case DataTypes.HAMBURGER:
-      console.log('closing mobile nav');
-      mobileNavRef && mobileNavRef.classList.toggle('translate-x-[150%]');
-      break;
-
-    default:
-      break;
+    case DataTypes.CLOSEMOBILENAV: return toggleMobile(mobileNavRef)
+    case DataTypes.HAMBURGER: return toggleMobile(mobileNavRef)
   }
 }
 
