@@ -28,12 +28,15 @@ export const btnClasses = [
 ]
 
 export const toggleMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.toggle('translate-x-[150%]');
+
+export const removeMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.remove('translate-x-[150%]');
+
 const clickHandler = (evt: Event, mobileNavRef: HTMLElement) => {
   const target = evt.target as HTMLElement;
   const type = target.getAttribute(Attributes.DATATYPE);
 
   switch (type) {
-    case DataTypes.CLOSEMOBILENAV: return toggleMobile(mobileNavRef)
+    case DataTypes.CLOSEMOBILENAV: return removeMobile(mobileNavRef)
     case DataTypes.HAMBURGER: return toggleMobile(mobileNavRef)
   }
 }
