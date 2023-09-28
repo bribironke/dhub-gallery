@@ -20,23 +20,23 @@ const register: Action = async ({ request }) => {
 
   if (typeof username !== 'string' || username.length < 1) {
     const status: iStatus = { message: "User field cannot be empty", type: "error" } 
-    return fail(400, { invalid: true })
+    return fail(400, { invalid: true, status })
   }
   if (typeof password !== 'string' || password.length < 1) {
     const status: iStatus = { message: "Password field cannot be empty", type: "error" } 
-    return fail(400, { invalid: true })
+    return fail(400, { invalid: true, status })
   }
   if (typeof email !== 'string' || email.length < 1) {
     const status: iStatus = { message: "Email field cannot be empty", type: "error" } 
-    return fail(400, { invalid: true })
+    return fail(400, { invalid: true, status })
   }
   if (typeof address !== 'string' || address.length < 1) {
     const status: iStatus = { message: "Address field cannot be empty", type: "error" } 
-    return fail(400, { invalid: true })
+    return fail(400, { invalid: true, status })
   }
   if (typeof phoneNumber !== 'string' || phoneNumber.length < 1) {
     const status: iStatus = { message: "Phone number field cannot be empty", type: "error" } 
-    return fail(400, { invalid: true })
+    return fail(400, { invalid: true, status })
   }
   // if (
   //   typeof username !== 'string' ||

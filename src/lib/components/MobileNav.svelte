@@ -35,14 +35,14 @@
 	
 	<hr class="dark:opacity-40"/>
 	<ul class="flex flex-col items-center">
-		<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/">Home</a></li>
+		<li class="border-b dark:border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/">Home</a></li>
 		{#if !$page.data.user}
-			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/login">Login</a></li>
-			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/register">Register</a></li>
+			<li class="border-b dark:border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/login">Login</a></li>
+			<li class="border-b dark:border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/register">Register</a></li>
 		{:else}
-			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/profile">Profile</a></li>
-			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/upload">Upload</a></li>
-			<li class="border-b border-opacity-40 w-full h-12">
+			<li class="border-b dark:border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/profile">Profile</a></li>
+			<li class="border-b dark:border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/upload">Upload</a></li>
+			<li class="border-b dark:border-opacity-40 w-full h-12">
 				<form action="/logout" method="post" class="w-full h-12 text-start">
 					<button type="submit" class="w-full h-full text-start">Logout</button>
 				</form>
