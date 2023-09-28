@@ -1,5 +1,5 @@
 import { browser } from "$app/environment";
-import type { TStatus, iCData, iStatus } from "$lib/interfaces";
+import type { DateTimeFormatOptions, TStatus, iCData, iStatus } from "$lib/interfaces";
 import { Attributes, DataTypes, Events } from "$lib/interfaces/enums";
 import Info__SvelteComponent_ from "$lib/components/icons/Info.svelte";
 import Alert__SvelteComponent_ from "$lib/components/icons/Alert.svelte";
@@ -92,3 +92,9 @@ export const color = (status: TStatus) => {
     default: return "bg-light-blue text-dark-blue"
   }
 }
+
+export const formatDate = (date: any) => {
+  const options: DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = new Date(date).toLocaleDateString(undefined, options);
+  return formattedDate;
+};

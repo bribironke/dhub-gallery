@@ -47,12 +47,15 @@ const profile: Action = async ({ request, locals }) => {
 
   try {
     // if (user)
-    await db.user.updateMany({
+    await db.user.update({
       where: { email: locals.user.email }, data: update
     })
   } catch (error: any) {
-    const status: iStatus = { message: error.message, type: "error" } 
-    console.log("error message", error.message)
+    let status: iStatus = { message: error.message, type: "error" }
+    if (error.code === "P2002") {
+      status = { message: "Username already exist. Change to another", type: "error" } 
+    }
+    console.log("error message", error.code)
     return fail(400, { invalid: true, status })
   }
  

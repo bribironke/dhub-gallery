@@ -30,6 +30,12 @@ export interface iCData {
   api_key: string;
 }
 
+export interface DateTimeFormatOptions {
+  year: "numeric" | "2-digit" | undefined;
+  month: "numeric" | "2-digit" | "short" | "long" | "narrow" | undefined;
+  day: "numeric" | "2-digit" | undefined;
+}
+
 export type TStatus = "info" | "alert" | "success" | "error"
 
 export interface iStatus {

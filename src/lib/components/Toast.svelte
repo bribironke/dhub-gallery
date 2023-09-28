@@ -1,6 +1,6 @@
 <script lang="ts">
   import Close from "./icons/Close.svelte";
-  import { color, icon, type iStatus } from "$lib";
+  import { color, formatDate, icon, type iStatus } from "$lib";
 
   let toastRef: HTMLElement;
   let show = false;
@@ -34,7 +34,7 @@ bind:this={toastRef}>
     <span class="capitalize">{status.type}</span>
   </p>
   <div class="flex items-center">
-    <p class="text-xs text-primary-700">11 mins ago</p>
+    <p class="text-xs text-primary-700">{ formatDate(new Date()) }</p>
     <button
       type="button"
       class="ml-2 box-content rounded-none border-none opacity-80 hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
