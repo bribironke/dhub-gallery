@@ -9,6 +9,7 @@ export enum Fields {
   PASSWORD = 'password',
   ADDRESS = 'address',
   PHONENUMBER = 'phoneNumber',
+  OLDEMAIL = 'oldemail',
   FILE = 'file'
 }
 

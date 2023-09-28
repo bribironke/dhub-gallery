@@ -1,12 +1,9 @@
 <script lang=ts>
   import type { ActionData } from './$types'
   import { enhance } from '$app/forms';
-  import { statusStore } from '$lib/stores';
-  import { initial } from '$lib';
+  import Toast from '$lib/components/Toast.svelte';
 
   export let form: ActionData
-
-  $: $statusStore = form?.status
 
 </script>
 <svelte:head>
@@ -14,7 +11,7 @@
 </svelte:head>
 
 <div class="w-full h-full flex justify-center items-center">
-  <form action="?/login" method="post" class="mx-auto flex flex-col gap-4 dcard w-full max-w-[480px] md:w-[600px]" use:enhance>
+  <form action="?/login" method="post" class="mx-auto flex flex-col gap-4 dcard w-full max-w-[480px] md:w-[600px]">
     <h1 class="text-2xl font-semibold">Login</h1>
     <hr class="dark:opacity-40"/>
     <div class="flex flex-col w-full gap-1">
@@ -41,3 +38,6 @@
     </div>
   </form>
 </div>
+{#if form?.status}
+   <Toast status={form.status} />
+{/if}

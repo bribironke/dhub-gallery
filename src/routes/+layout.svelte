@@ -12,7 +12,6 @@
 
 
 <main class="text-font-color dark:text-white bg-light-bg dark:bg-dmbg h-full md:h-screen relative">
-  <!-- <Toast /> -->
   <Header />
   <section class="center">
     <slot />

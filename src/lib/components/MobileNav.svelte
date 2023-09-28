@@ -39,9 +39,9 @@
 		{:else}
 			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/profile">Profile</a></li>
 			<li class="border-b border-opacity-40 w-full h-12"><a class="w-full h-full flex items-center justify-start" href="/upload">Upload</a></li>
-			<li class="border-b border-opacity-40 w-full py-3">
-				<form action="/logout" method="post">
-					<button type="submit">Logout</button>
+			<li class="border-b border-opacity-40 w-full h-12">
+				<form action="/logout" method="post" class="w-full h-12 text-start">
+					<button type="submit" class="w-full h-full text-start">Logout</button>
 				</form>
 			</li>
 		{/if}
