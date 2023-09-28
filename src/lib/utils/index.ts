@@ -29,7 +29,7 @@ export const btnClasses = [
 
 export const toggleMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.toggle('translate-x-[150%]');
 
-export const removeMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.remove('translate-x-[150%]');
+export const removeMobile = (mobileNavRef: HTMLElement) => mobileNavRef && mobileNavRef.classList.add('translate-x-[150%]');
 
 const clickHandler = (evt: Event, mobileNavRef: HTMLElement) => {
   const target = evt.target as HTMLElement;
